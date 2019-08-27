@@ -1,0 +1,14 @@
+.container
+  .row
+    .col-xs-12
+      h1 Hello There
+      - if current_user
+        p
+          = "You are logged as #{current_user.email}"
+          = form_tag(session_path(@session), method: "delete") do
+            = submit_tag "Logout", class: "btn-warning btn-orange btn-lg"
+      - else
+        p
+        = link_to "Sign up", new_user_path, class: "btn-warning btn-lg"
+        p
+        = link_to "Sign in", new_session_path, class: "btn-warning btn-lg"
