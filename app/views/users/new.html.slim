@@ -1,0 +1,11 @@
+.container
+  .row
+    .col-xs-12
+      h1 Faça Seu Cadastro
+      = simple_form_for @user, wrapper: :horizontal_form do |f|
+        = f.input :first_name, required: true, autofocus: true, label: "Nome"
+        = f.input :last_name, required: true, autofocus: true, label: "Sobrenome"
+        = f.input :email, required: true, label: "E-mail"
+        = f.input :password, required: true, label: "Cria sua Senha"
+        = f.input :password, required: true, label: "Confirme sua Senha"
+        = f.button :submit, "CADASTRE-SE", class: "btn-warning btn-orange btn-lg"
